@@ -27,11 +27,23 @@
                            <input type="text" id="nama" name="nama" class="form-control">
                         </div>
                         <div class="form-group">
-                            <label for="tipe" class="block">Tipe Produk :</label>
-                            <input type="text" id="tipe" name="tipe" class="form-control">
+                            <label for="tipe" class="block">No. Telepon :</label>
+                            <input type="text" id="telepon" name="telepon" class="form-control">
                         </div>
                         <div class="form-group">
-                            <label for="alamat" class="block">Alamat Vendor :</label>
+                            <label for="alamat" class="block">Email :</label>
+                            <input type="text" id="email" name="email" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="alamat" class="block">Kota :</label>
+                            <input type="text" id="kota" name="kota" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="alamat" class="block">Negara :</label>
+                            <input type="text" id="negara" name="negara" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="alamat" class="block">Alamat :</label>
                             <input type="text" id="alamat" name="alamat" class="form-control">
                         </div>
                         <div class="text-end py-3">

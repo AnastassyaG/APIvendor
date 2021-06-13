@@ -30,12 +30,14 @@ class VendorController extends Controller
     public function create(request $request)
     {
         //
-        $barang = new Vendor;
-        // $barang->id = $request->id;
-        $barang->nama_vendor = $request->nama;
-        $barang->tipe_produk = $request->tipe;
-        $barang->alamat = $request->alamat;
-        $barang->save();
+        $vendor = new Vendor;
+        $vendor->vendor = $request->vendor;
+        $vendor->telepon = $request->telepon;
+        $vendor->email = $request->email;
+        $vendor->kota = $request->kota;
+        $vendor->negara = $request->negara;
+        $vendor->alamat = $request->alamat;
+        $vendor->save();
 
         return redirect()->back();
 
@@ -48,21 +50,24 @@ class VendorController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(request $request, $id)
+    public function update(request $request, vendor $vendor, $id)
     {
         //
-        $id = $request->id;
-        $nama_vendor= $request->nama;
-        $tipe_produk = $request->tipe;
-        $alamat = $request->alamat;
+        $vendor->vendor = $request->vendor;
+        $vendor->telepon = $request->telepon;
+        $vendor->email = $request->email;
+        $vendor->kota = $request->kota;
+        $vendor->negara = $request->negara;
+        $vendor->alamat = $request->alamat;
 
-        $barang = Vendor::find($id);
-        $barang->id = $id;
-        $barang->nama_vendor = $nama_vendor;
-        $barang->tipe_produk = $tipe_produk;
-        $barang->alamat = $alamat;
-        $barang->save();
-
+        $vendor = Vendor::find($id);
+        $vendor->vendor = $request->vendor;
+        $vendor->telepon = $request->telepon;
+        $vendor->email = $request->email;
+        $vendor->kota = $request->kota;
+        $vendor->negara = $request->negara;
+        $vendor->alamat = $request->alamat;
+        $vendor->save();
         return redirect()->route('vendor.index');
         }
 

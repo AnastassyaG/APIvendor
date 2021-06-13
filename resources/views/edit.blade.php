@@ -25,14 +25,24 @@
                     @method("PUT")
                        <div class="form-group ">
                            <label for="nama" class="block">Nama Vendor :</label>
-                           <input type="text" id="nama" name="nama" class="form-control" value="{{$edit->nama_vendor}}">
+                           <input type="text" id="vendor" name="vendor" class="form-control" value="{{$edit->vendor}}">
                         </div>
                         <div class="form-group">
-                            <label for="tipe" class="block">Tipe Produk :</label>
-                            <input type="text" id="tipe" name="tipe" class="form-control" value="{{$edit->tipe_produk}}">
+                            <label for="tipe" class="block">No. Telepon :</label>
+                            <input type="text" id="tipe" name="telepon" class="form-control" value="{{$edit->telepon}}">
                         </div>
                         <div class="form-group">
-                            <label for="alamat" class="block">Alamat Vendor :</label>
+                            <label for="alamat" class="block">Email :</label>
+                            <input type="text" id="email" name="email" class="form-control" value="{{$edit->email}}">
+                        </div>
+                        <div class="form-group">
+                            <label for="alamat" class="block">Kota :</label>
+                            <input type="text" id="kota" name="kota" class="form-control" value="{{$edit->kota}}">
+                        </div><div class="form-group">
+                            <label for="alamat" class="block">Negara :</label>
+                            <input type="text" id="negara" name="negara" class="form-control" value="{{$edit->negara}}">
+                        </div><div class="form-group">
+                            <label for="alamat" class="block">Alamat :</label>
                             <input type="text" id="alamat" name="alamat" class="form-control" value="{{$edit->alamat}}">
                         </div>
                         <div class="text-end py-3">
