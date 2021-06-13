@@ -7,10 +7,19 @@ use App\Models\Vendor;
 
 class VendorController extends Controller
 {
+    public function indexs()
+    {
+        $tampils = Vendor::orderBy('id','DESC')->get();
+        return view('tampil',compact('tampils'));
+    }
     public function index()
     {
-        //
-        return Vendor::all();
+        $tampils = Vendor::orderBy('id','DESC')->get();
+        $response = [
+            'message' => "Show data terbaru!",
+            'data' => $tampils
+        ];
+        return response()->json($response,201);
     }
 
     /**
@@ -22,13 +31,13 @@ class VendorController extends Controller
     {
         //
         $barang = new Vendor;
-        $barang->id = $request->id;
-        $barang->nama_vendor = $request->nama_vendor;
-        $barang->tipe_produk = $request->tipe_produk;
+        // $barang->id = $request->id;
+        $barang->nama_vendor = $request->nama;
+        $barang->tipe_produk = $request->tipe;
         $barang->alamat = $request->alamat;
         $barang->save();
 
-        return "Data Berhasil Masuk";
+        return redirect()->back();
 
     }
 
@@ -43,8 +52,8 @@ class VendorController extends Controller
     {
         //
         $id = $request->id;
-        $nama_vendor= $request->nama_vendor;
-        $tipe_produk = $request->tipe_produk;
+        $nama_vendor= $request->nama;
+        $tipe_produk = $request->tipe;
         $alamat = $request->alamat;
 
         $barang = Vendor::find($id);
@@ -54,7 +63,7 @@ class VendorController extends Controller
         $barang->alamat = $alamat;
         $barang->save();
 
-        return "Data Berhasil di Update";
+        return redirect()->route('vendor.index');
         }
 
     /**
@@ -69,6 +78,13 @@ class VendorController extends Controller
         $barang = Vendor::find($id);
         $barang->delete();
 
-        return "Data Berhasil di Hapus";
+        return redirect()->route('vendor.index');
+    }
+    public function add(){
+        return view ('add');
+    }
+    public function edit($id){
+        $edit = Vendor::findorFail($id);
+        return view('edit', compact('edit'));
     }
 }

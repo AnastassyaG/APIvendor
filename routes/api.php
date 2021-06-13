@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\VendorController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 /*
@@ -17,7 +18,11 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('Vendor', 'VendorController@index');
-Route::post('Vendor', 'VendorController@create');
-Route::put('/Vendor/{id}', 'VendorController@update');
-Route::delete('/Vendor/{id}', 'VendorController@delete');
+Route::get('Vendor', 'VendorController@index')->name('vendor.api');
+Route::get('/index', 'VendorController@indexs')->name('vendor.index');
+Route::post('Vendor', 'VendorController@create')->name('vendor.post');
+Route::put('/Vendor/{id}', 'VendorController@update')->name('vendor.update');
+Route::delete('/Vendor/{id}', 'VendorController@delete')->name('vendor.delete');
+
+Route::get('/create', [VendorController::class,'add'])->name('vendor.create');
+Route::get('/edit/{Vendor:id}',[VendorController::class,'edit'])->name('vendor.edit');
