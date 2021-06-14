@@ -24,7 +24,7 @@
                     @csrf
                        <div class="form-group ">
                            <label for="nama" class="block">Nama Vendor :</label>
-                           <input type="text" id="nama" name="nama" class="form-control">
+                           <input type="text" id="vendor" name="vendor" class="form-control">
                         </div>
                         <div class="form-group">
                             <label for="tipe" class="block">No. Telepon :</label>
